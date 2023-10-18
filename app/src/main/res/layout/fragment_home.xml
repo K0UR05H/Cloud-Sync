@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".HomeFragment">
+
+  <com.google.android.material.progressindicator.LinearProgressIndicator
+    android:id="@+id/progressIndicator"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:indeterminate="true"
+    android:visibility="gone"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+  <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/firstNameTextField"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:hint="@string/first_name"
+    app:errorEnabled="true"
+    app:layout_constraintTop_toBottomOf="@id/progressIndicator"
+    app:layout_constraintBottom_toTopOf="@+id/lastNameTextField"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintVertical_chainStyle="packed">
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/lastNameTextField"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:hint="@string/last_name"
+    app:errorEnabled="true"
+    app:layout_constraintTop_toBottomOf="@+id/firstNameTextField"
+    app:layout_constraintBottom_toTopOf="@+id/phoneTextField"
+    app:layout_constraintStart_toStartOf="@id/firstNameTextField"
+    app:layout_constraintEnd_toEndOf="@id/firstNameTextField">
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/phoneTextField"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:hint="@string/phone"
+    app:errorEnabled="true"
+    app:layout_constraintTop_toBottomOf="@+id/lastNameTextField"
+    app:layout_constraintBottom_toTopOf="@+id/addButton"
+    app:layout_constraintStart_toStartOf="@id/lastNameTextField"
+    app:layout_constraintEnd_toEndOf="@id/lastNameTextField">
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:inputType="phone" />
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <Button
+    android:id="@+id/addButton"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="@string/add"
+    app:layout_constraintTop_toBottomOf="@+id/phoneTextField"
+    app:layout_constraintBottom_toTopOf="@id/backupButton"
+    app:layout_constraintStart_toStartOf="@id/phoneTextField"
+    app:layout_constraintEnd_toEndOf="@id/phoneTextField" />
+
+  <Button
+    style="?attr/materialButtonOutlinedStyle"
+    android:id="@+id/backupButton"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="@string/backup"
+    android:layout_marginEnd="8dp"
+    app:layout_constraintStart_toStartOf="@id/addButton"
+    app:layout_constraintEnd_toStartOf="@id/restoreButton"
+    app:layout_constraintTop_toBottomOf="@id/addButton"
+    app:layout_constraintBottom_toBottomOf="parent" />
+
+  <Button
+    style="?attr/materialButtonOutlinedStyle"
+    android:id="@+id/restoreButton"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="@string/restore"
+    android:layout_marginStart="8dp"
+    app:layout_constraintStart_toEndOf="@id/backupButton"
+    app:layout_constraintEnd_toEndOf="@id/addButton"
+    app:layout_constraintTop_toBottomOf="@id/addButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
